@@ -2599,7 +2599,7 @@ do
 								textchosen = {unpack(textchosen, 1, displayLimit)} -- Only take up to displayLimit
 							end
 			
-							Value.Text = #chosen == 0 and "" or table.concat(textchosen, ", ") .. (cutobject and ", ..." or "")
+							Value.Text = #chosen == 0 and "" or table.concat(textchosen, ", ") .. (cutobject and ", . . ." or "")
 							text.Visible = true
 			
 							Library.Flags[Dropdown.Flag] = chosen
@@ -2638,7 +2638,7 @@ do
 				else
 					-- Fallback for manual truncation if automatic truncation isn't enough
 					local displayLimit = Dropdown.DisplayLimit or 3
-					local truncatedText = table.concat(textchosen, ", ", 1, displayLimit) .. ", ..."
+					local truncatedText = table.concat(textchosen, ", ", 1, displayLimit) .. ", . . ."
 					Value.Text = truncatedText
 				end
 			end
@@ -2744,7 +2744,7 @@ do
 					end
 
 					updateValueText()
-					--Value.Text = #chosen == 0 and "" or table.concat(textchosen, ", ") .. (cutobject and ", ..." or "")
+					--Value.Text = #chosen == 0 and "" or table.concat(textchosen, ", ") .. (cutobject and ", . . ." or "")
 
 					Library.Flags[Dropdown.Flag] = chosen
 					Dropdown.Callback(chosen)

@@ -1883,7 +1883,7 @@ do
 				local Value = Instance.new("TextLabel")
 				Value.Name = "Value"
 				Value.Font = Enum.Font.Code
-				Value.Text = "..."
+				Value.Text = ". . ."
 				Value.TextColor3 = Color3.fromRGB(255, 255, 255)
 				Value.TextSize = Library.FSize
 				Value.TextStrokeTransparency = 0
@@ -2037,7 +2037,7 @@ do
 				KeyFrame.MouseButton1Click:Connect(function()
 					if not Keybind.Binding then
 
-						Value.Text = "..."
+						Value.Text = ". . ."
 
 						Keybind.Binding = Library:Connection(
 							game:GetService("UserInputService").InputBegan,
@@ -2883,7 +2883,7 @@ do
 			local Value = Instance.new("TextLabel")
 			Value.Name = "Value"
 			Value.Font = Enum.Font.Code
-			Value.Text = "..."
+			Value.Text = ". . ."
 			Value.TextColor3 = Color3.fromRGB(255, 255, 255)
 			Value.TextSize = Library.FSize
 			Value.TextStrokeTransparency = 0
@@ -3052,7 +3052,7 @@ do
 			KeyFrame.MouseButton1Click:Connect(function()
 				if not Keybind.Binding then
 
-					Value.Text = "..."
+					Value.Text = ". . ."
 
 					Keybind.Binding = Library:Connection(
 						game:GetService("UserInputService").InputBegan,

@@ -2573,7 +2573,7 @@ do
 								textchosen = {unpack(textchosen, 1, displayLimit)} -- Only take up to displayLimit
 							end
 			
-							Value.Text = #chosen == 0 and "" or table.concat(textchosen, ", ") .. (cutobject and ", ..." or "")
+							Value.Text = #chosen == 0 and "" or table.concat(textchosen, ", ") .. (cutobject and ", . . ." or "")
 							text.Visible = false
 			
 							Library.Flags[Dropdown.Flag] = chosen

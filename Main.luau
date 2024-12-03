@@ -3555,7 +3555,7 @@ do
 				Button.Callback()
 				Value.TextColor3 = Library.Accent
 				task.spawn(function()
-					NewButton.MouseButton1Up:Wait()
+					task.wait(.1)
 					Value.TextColor3 = Color3.fromRGB(255,255,255)
 				end)
 			end)

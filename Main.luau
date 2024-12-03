@@ -7,26 +7,22 @@ do
 	getsynasset = getcustomasset or getsynasset
 	Font = setreadonly(Font, false);
 	function Font:Register(Name, Weight, Style, Asset)
-		if not isfile(Name .. ".font") then
-			if not isfile(Asset.Id) then
-				writefile(Asset.Id, Asset.Font);
-			end;
-			--
-			local Data = {
-				name = Name,
-				faces = {{
-					name = "Regular",
-					weight = Weight,
-					style = Style,
-					assetId = getsynasset(Asset.Id);
-				}}
-			};
-			--
-			writefile(Name .. ".font", game:GetService("HttpService"):JSONEncode(Data));
-			return getsynasset(Name .. ".font");
-		else 
-			warn("Font already registered");
+		if not isfile(Asset.Id) then
+			writefile(Asset.Id, Asset.Font);
 		end;
+		--
+		local Data = {
+			name = Name,
+			faces = {{
+				name = "Regular",
+				weight = Weight,
+				style = Style,
+				assetId = getsynasset(Asset.Id);
+			}}
+		};
+		--
+		writefile(Name .. ".font", game:GetService("HttpService"):JSONEncode(Data));
+		return getsynasset(Name .. ".font");
 	end;
 	--
 	function Font:GetRegistry(Name)
@@ -103,7 +99,7 @@ do
 		Connections = {};
 		UIKey = Enum.KeyCode.End;
 		ScreenGUI = nil;
-		FSize = 14;
+		FSize = 12;
 		SettingsPage = nil;
 		VisValues = {};
 		Cooldown = false;

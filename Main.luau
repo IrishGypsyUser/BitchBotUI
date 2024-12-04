@@ -2079,6 +2079,7 @@ do
 						Keybind.Binding = Library:Connection(
 							game:GetService("UserInputService").InputBegan,
 							function(input, gpe)
+								if gpe then return end
 								set(
 									input.UserInputType == Enum.UserInputType.Keyboard and input.KeyCode
 										or input.UserInputType
@@ -2091,7 +2092,8 @@ do
 					end
 				end)
 				--
-				Library:Connection(game:GetService("UserInputService").InputBegan, function(inp)
+				Library:Connection(game:GetService("UserInputService").InputBegan, function(inp,gpe)
+					if gpe then return end
 					if (inp.KeyCode == Key or inp.UserInputType == Key) and not Keybind.Binding and not Keybind.UseKey then
 						if Keybind.Mode == "Hold" then
 							if Keybind.Flag then
@@ -2118,7 +2120,8 @@ do
 					end
 				end)
 				--
-				Library:Connection(game:GetService("UserInputService").InputEnded, function(inp)
+				Library:Connection(game:GetService("UserInputService").InputEnded, function(inp, gpu)
+					if gpu then return end
 					if Keybind.Mode == "Hold" and not Keybind.UseKey then
 						if Key ~= "" or Key ~= nil then
 							if inp.KeyCode == Key or inp.UserInputType == Key then
@@ -2171,7 +2174,8 @@ do
 					NewToggle.ZIndex = 1
 				end)
 				--
-				Library:Connection(game:GetService("UserInputService").InputBegan, function(Input)
+				Library:Connection(game:GetService("UserInputService").InputBegan, function(Input, gpe)
+					if gpe then return end
 					if ModeBox.Visible and (Input.UserInputType == Enum.UserInputType.MouseButton1) then
 						if not Library:IsMouseOverFrame(ModeBox) then
 							ModeBox.Visible = false
@@ -3094,6 +3098,8 @@ do
 					Keybind.Binding = Library:Connection(
 						game:GetService("UserInputService").InputBegan,
 						function(input, gpe)
+							if gpe then return end
+
 							set(
 								input.UserInputType == Enum.UserInputType.Keyboard and input.KeyCode
 									or input.UserInputType
@@ -3106,7 +3112,8 @@ do
 				end
 			end)
 			--
-			Library:Connection(game:GetService("UserInputService").InputBegan, function(inp)
+			Library:Connection(game:GetService("UserInputService").InputBegan, function(inp,gpe)
+				if gpe then return end
 				if (inp.KeyCode == Key or inp.UserInputType == Key) and not Keybind.Binding and not Keybind.UseKey then
 					if Keybind.Mode == "Hold" then
 						if Keybind.Flag then
@@ -3133,7 +3140,8 @@ do
 				end
 			end)
 			--
-			Library:Connection(game:GetService("UserInputService").InputEnded, function(inp)
+			Library:Connection(game:GetService("UserInputService").InputEnded, function(inp, gpe)
+				if gpe then return end
 				if Keybind.Mode == "Hold" and not Keybind.UseKey then
 					if Key ~= "" or Key ~= nil then
 						if inp.KeyCode == Key or inp.UserInputType == Key then
@@ -3186,7 +3194,8 @@ do
 				NewKey.ZIndex = 1
 			end)
 			--
-			Library:Connection(game:GetService("UserInputService").InputBegan, function(Input)
+			Library:Connection(game:GetService("UserInputService").InputBegan, function(Input, gpe)
+				if gpe then return end
 				if ModeBox.Visible and (Input.UserInputType == Enum.UserInputType.MouseButton1) then
 					if not Library:IsMouseOverFrame(ModeBox) then
 						ModeBox.Visible = false

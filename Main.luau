@@ -99,7 +99,7 @@ do
 		Connections = {};
 		UIKey = Enum.KeyCode.End;
 		ScreenGUI = nil;
-		FSize = 14;
+		FSize = 12;
 		SettingsPage = nil;
 		VisValues = {};
 		Cooldown = false;

@@ -65,6 +65,8 @@ do
 			[Enum.KeyCode.Eight] = "8",
 			[Enum.KeyCode.Nine] = "9",
 			[Enum.KeyCode.Zero] = "0",
+			[Enum.KeyCode.Insert] = "Ins",
+			[Enum.KeyCode.Delete] = "Del",
 			[Enum.KeyCode.KeypadOne] = "Num1",
 			[Enum.KeyCode.KeypadTwo] = "Num2",
 			[Enum.KeyCode.KeypadThree] = "Num3",
